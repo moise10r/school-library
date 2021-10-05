@@ -14,7 +14,8 @@ To get a local copy up and running follow these simple example steps.
 - install Ruby and then go to your terminal and run: 
 ```bash
 git clone git@github.com:moise10r/school-library.git
-cd ./school-library
+```
+- ``` cd ./school-library ```
 
 ## Authors
 
