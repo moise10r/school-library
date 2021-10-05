@@ -22,7 +22,3 @@ class Person
   public :can_use_services
 
 end
-
-# person = Person.new(21, "Moise",true)
-# puts person.name
-# puts person.can_use_services = true
