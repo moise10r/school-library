@@ -7,7 +7,7 @@ class Student < Person
     @classroom = classroom
   end
 
-  # def play_hooky
-  #   "¯\(ツ)/¯"
-  # end
+  def play_hooky
+    "¯\(ツ)/¯"
+  end
 end
