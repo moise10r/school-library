@@ -1,4 +1,5 @@
 require 'securerandom'
+require_relative 'corrector'
 
 class Person
   attr_reader :id
