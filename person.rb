@@ -3,7 +3,7 @@ require_relative 'corrector'
 
 class Person
   attr_reader :id, :rentals
-  attr_accessor :name, :age
+  attr_accessor :name, :age, :rentals
 
   def initialize(age:, name: 'Unknown', parent_permission: true)
     @id = SecureRandom.hex(13)
