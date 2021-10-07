@@ -14,4 +14,9 @@ class Rental
     @book = book
     book.add_rental(self)
   end
+
+  def person=(person)
+    @person = person
+    person.add_rental(self)
+  end
 end
