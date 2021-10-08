@@ -96,4 +96,16 @@ class App
     puts
     run
   end
+
+  def create_book
+    print 'Title: '
+    title = gets.chomp
+    print 'Author: '
+    author = gets.chomp
+
+    @books.push(Book.new(title, author))
+    puts 'Book created successfully'
+    puts
+    run
+  end
 end
