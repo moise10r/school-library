@@ -3,7 +3,6 @@ require_relative 'teacher'
 require_relative 'book'
 require_relative 'rental'
 
-
 class App
   attr_accessor :books, :persons, :rentals
 
@@ -12,7 +11,6 @@ class App
     @persons = []
     @rentals = []
   end
-  
 
   def run
     choice = show_options
@@ -35,6 +33,7 @@ class App
       puts 'Thank you for using this app!'
     end
   end
+
   def show_options
     options = [
       '1 - list all books',
@@ -50,7 +49,6 @@ class App
     puts options
     gets.chomp.to_i
   end
-  
 
   def handle_book_list
     @books.each { |book| puts "Title: '#{book.title}', Author: #{book.author}" }
@@ -64,13 +62,14 @@ class App
     run
   end
 
-
   def handle_rentals_list
     print 'ID of person: '
     id = gets.chomp.to_i
     puts 'Rentals:'
     selected_rental = @rentals.select { |rental| rental.person.id == id }
-    selected_rental.each { |s_rental| puts "Date: '#{s_rental.date}', Book: #{s_rental.book.title} , by: #{s_rental.book.author}" }
+    selected_rental.each do |s_rental|
+      puts "Date: '#{s_rental.date}', Book: #{s_rental.book.title} , by: #{s_rental.book.author}"
+    end
     run
   end
 
