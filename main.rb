@@ -57,4 +57,15 @@ class App
     selected_rental.each { |s_rental| puts "Date: '#{s_rental.date}', Book: #{s_rental.book.title} , by: #{s_rental.book.author}" }
     run
   end
+
+  def create_teacher
+    print 'Age: '
+    age = gets.chomp
+    print 'Name: '
+    name = gets.chomp
+    print 'Specialization: '
+    specialization = gets.chomp
+    @persons.push(Teacher.new(age, name, specialization))
+  end
+
 end
