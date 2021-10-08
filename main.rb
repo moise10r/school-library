@@ -33,7 +33,6 @@ class App
       puts 'Thank you for using this app!'
     end
   end
-  # rubocop:enable Metrics/CyclomaticComplexity
 
   def show_options
     options = [
@@ -133,7 +132,8 @@ class App
     book = @books[selected_book]
 
     @persons.each_with_index do |person, index|
-      puts "#{index}) [#{person.class.name.split('::').last}] Name: '#{person.name}', ID: #{person.id} , Age: #{person.age}"
+      splited_name = person.class.name.split('::').last
+      puts "#{index}) [#{splited_name}] Name: '#{person.name}', ID: #{person.id} , Age: #{person.age}"
     end
     selected_person = gets.chomp.to_i
     person = @persons[selected_person]
