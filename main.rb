@@ -14,6 +14,11 @@ class App
     @rentals = []
   end
   
+
+  def run
+    choice = show_options
+    choice = show_options while choice < 1 || choice > 7
+  end
   def show_options
     options = [
       '1 - list all books',
