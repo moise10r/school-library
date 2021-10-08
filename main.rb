@@ -168,3 +168,5 @@ def main
   library = Library.new
   library.run
 end
+
+main
