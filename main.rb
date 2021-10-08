@@ -47,4 +47,14 @@ class App
     end
     run
   end
+
+
+  def handle_rentals_list
+    print 'ID of person: '
+    id = gets.chomp.to_i
+    puts 'Rentals:'
+    selected_rental = @rentals.select { |rental| rental.person.id == id }
+    selected_rental.each { |s_rental| puts "Date: '#{s_rental.date}', Book: #{s_rental.book.title} , by: #{s_rental.book.author}" }
+    run
+  end
 end
