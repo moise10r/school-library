@@ -24,6 +24,10 @@ class App
       '6 - List all rentals for a given person id',
       '7 - exit'
     ]
+    puts
+    puts 'Please choose an option by entering a number: '
+    puts options
+    gets.chomp.to_i
   end
-
+  
 end
