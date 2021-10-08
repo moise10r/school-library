@@ -65,7 +65,17 @@ class App
     name = gets.chomp
     print 'Specialization: '
     specialization = gets.chomp
-    @persons.push(Teacher.new(age, name, specialization))
+    @persons.push(Teacher.new(age: age, specialization: specialization, name: name))
   end
 
+  def create_student
+    print 'Age: '
+    age = gets.chomp
+    print 'Name: '
+    name = gets.chomp
+    print 'Has parent permission? [Y/N]: '
+    permission = gets.chomp != 'n'
+    classroom = Classroom.new('Learn to code')
+    @persons.push(Student.new(age: age, classroom: classroom, name: name, parent_permission: parent_permission))
+  end
 end
