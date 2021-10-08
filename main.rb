@@ -18,6 +18,23 @@ class App
   def run
     choice = show_options
     choice = show_options while choice < 1 || choice > 7
+
+    case choice
+    when 1
+      handle_book_list
+    when 2
+      handle_person_list
+    when 3
+      create_person
+    when 4
+      create_book
+    when 5
+      create_rental
+    when 6
+      handle_rentals_list
+    when 7
+      puts 'Thank you for using this app!'
+    end
   end
   def show_options
     options = [
