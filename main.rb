@@ -12,6 +12,7 @@ class App
     @rentals = []
   end
 
+  # rubocop:disable Metrics/CyclomaticComplexity
   def run
     choice = show_options
     choice = show_options while choice < 1 || choice > 7
@@ -33,6 +34,7 @@ class App
       puts 'Thank you for using this app!'
     end
   end
+  # rubocop:enable Metrics/CyclomaticComplexity
 
   def show_options
     options = [
