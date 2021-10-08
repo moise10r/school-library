@@ -35,4 +35,9 @@ class App
     gets.chomp.to_i
   end
   
+
+  def handle_book_list
+    @books.each { |book| puts "Title: '#{book.title}', Author: #{book.author}" }
+    run
+  end
 end
