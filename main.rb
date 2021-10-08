@@ -78,4 +78,22 @@ class App
     classroom = Classroom.new('Learn to code')
     @persons.push(Student.new(age: age, classroom: classroom, name: name, parent_permission: parent_permission))
   end
+
+  def create_person
+    print 'Do you want to create a student (1) or a teacher (2)? [Input the number]: '
+    person_type = 0
+
+    person_type = gets.chomp while person_type != '2' && person_type != '1'
+
+    case person_type
+    when '1'
+      create_student
+
+    when '2'
+      create_teacher
+    end
+    puts 'Person created successfully'
+    puts
+    run
+  end
 end
