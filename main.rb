@@ -161,3 +161,10 @@ class App
     run
   end
 end
+
+def main
+  puts 'Welcome to School Library App!'
+  puts
+  library = Library.new
+  library.run
+end
