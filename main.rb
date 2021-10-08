@@ -9,6 +9,7 @@ class App
   attr_accessor :books, :persons, :rentals
 
   def initialize
+    # @classroom = Classroom.new('Learn to code')
     @books = []
     @persons = []
     @rentals = []
@@ -91,9 +92,27 @@ class App
     print 'Name: '
     name = gets.chomp
     print 'Has parent permission? [Y/N]: '
-    permission = gets.chomp != 'n'
-    classroom = Classroom.new('Learn to code')
-    @persons.push(Student.new(age: age, classroom: classroom, name: name, parent_permission: parent_permission))
+    parent_permission = gets.chomp != 'n'
+    puts 'create'
+    @persons.push(Student.new(age: age, classroom: 'learn to code', name: name, parent_permission: parent_permission))
+  end
+
+  def create_person
+    print 'Do you want to create a student (1) or a teacher (2)? [Input the number]: '
+    person_type = 0
+
+    person_type = gets.chomp while person_type != '2' && person_type != '1'
+
+    case person_type
+    when '1'
+      create_student
+
+    when '2'
+      create_teacher
+    end
+    puts 'Person created successfully'
+    puts
+    run
   end
 
   def create_person
@@ -120,37 +139,7 @@ class App
     print 'Author: '
     author = gets.chomp
 
-    @books.push(Book.new(title, author))
-    puts 'Book created successfully'
-    puts
-    run
-  end
-
-  def create_person
-    print 'Do you want to create a student (1) or a teacher (2)? [Input the number]: '
-    person_type = 0
-
-    person_type = gets.chomp while person_type != '2' && person_type != '1'
-
-    case person_type
-    when '1'
-      create_student
-
-    when '2'
-      create_teacher
-    end
-    puts 'Person created successfully'
-    puts
-    run
-  end
-
-  def create_book
-    print 'Title: '
-    title = gets.chomp
-    print 'Author: '
-    author = gets.chomp
-
-    @books.push(Book.new(title, author))
+    @books.push(Book.new(title: title, author: author))
     puts 'Book created successfully'
     puts
     run
@@ -182,7 +171,7 @@ end
 def main
   puts 'Welcome to School Library App!'
   puts
-  library = Library.new
+  library = App.new
   library.run
 end
 
