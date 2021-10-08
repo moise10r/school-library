@@ -40,4 +40,11 @@ class App
     @books.each { |book| puts "Title: '#{book.title}', Author: #{book.author}" }
     run
   end
+
+  def handle_person_list
+    @persons.each do |person|
+      puts "[#{person.class.name.split('::').last}] Name: '#{person.name}', ID: #{person.id} , Age: #{person.age}"
+    end
+    run
+  end
 end
