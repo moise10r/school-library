@@ -38,7 +38,8 @@ def select_option(choice)
 end
 
 def run
-  loop do
+  choice = 0
+  until choice == 7
     choice = show_options
     choice = show_options while choice < 1 || choice > 7
     select_option(choice)
