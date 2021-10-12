@@ -13,7 +13,7 @@ class App
   end
 
   def handle_book_list
-    @books.each { |book| puts "Title: '#{book.title}', Author: #{book.author}" }
+    @books.each { |book| puts book.details }
   end
 
   def handle_person_list

@@ -11,4 +11,8 @@ class Book
   def add_rental(rental)
     @rentals << rental
   end
+
+  def details
+    "Title: #{@title}, Author: #{@author}"
+  end
 end
