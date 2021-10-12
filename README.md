@@ -1,6 +1,6 @@
-# School Libary
+# School Library
 
-A ruby application to record what books are in the library and who borrows them
+A ruby application to record what books are in the library and who borrows them.
 
 ## Built with
  - Ruby
