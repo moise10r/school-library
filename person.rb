@@ -1,18 +1,19 @@
-require 'securerandom'
 require_relative 'corrector'
-
+# rubocop:disable Style/OptionalBooleanParameter
 class Person
   attr_reader :id, :rentals
   attr_accessor :name, :age
 
-  def initialize(age:, name: 'Unknown', parent_permission: true)
-    @id = SecureRandom.hex(13).to_i
+  def initialize(age, name = 'Unknown', parent_permission = true)
+    @id = Random.rand(0..10_000)
     @name = name
     @age = age
     @parent_permission = parent_permission
     @corrector = Corrector.new
     @rentals = []
   end
+
+  private
 
   def of_age?
     @age >= 18
@@ -30,5 +31,8 @@ class Person
     @rentals << rental
   end
 
-  private :of_age?
+  def to_s
+    "ID: #{@id}, Name: #{@name}, Age: #{@age}"
+  end
 end
+# rubocop:enable Style/OptionalBooleanParameter

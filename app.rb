@@ -4,8 +4,6 @@ require_relative 'book'
 require_relative 'rental'
 
 class App
-  attr_accessor :books, :persons, :rentals
-
   def initialize
     @books = []
     @persons = []
@@ -13,44 +11,47 @@ class App
   end
 
   def handle_book_list
-    @books.each { |book| puts book.details }
+    @books.each { |book| puts book }
   end
 
   def handle_person_list
-    @persons.each do |person|
-      puts "[#{person.class.name.split('::').last}] Name: '#{person.name}', ID: #{person.id} , Age: #{person.age}"
-    end
+    @persons.each { |person| puts person }
   end
 
   def handle_rentals_list
     print 'ID of person: '
     id = gets.chomp.to_i
+
     puts 'Rentals:'
     selected_rental = @rentals.select { |rental| rental.person.id == id }
-    selected_rental.each do |s_rental|
-      puts "Date: '#{s_rental.date}', Book: #{s_rental.book.title} , by: #{s_rental.book.author}"
-    end
+
+    selected_rental.each { |s_rental| puts s_rental }
   end
 
   def create_teacher
     print 'Age: '
     age = gets.chomp
+
     print 'Name: '
     name = gets.chomp
+
     print 'Specialization: '
     specialization = gets.chomp
-    @persons.push(Teacher.new(age: age, specialization: specialization, name: name))
+
+    @persons.push(Teacher.new(age, specialization, name))
   end
 
   def create_student
     print 'Age: '
     age = gets.chomp
+
     print 'Name: '
     name = gets.chomp
+
     print 'Has parent permission? [Y/N]: '
     parent_permission = gets.chomp != 'n'
-    puts 'create'
-    @persons.push(Student.new(age: age, classroom: 'learn to code', name: name, parent_permission: parent_permission))
+
+    @persons.push(Student.new(age, 'learn to code', name, parent_permission))
   end
 
   def create_person
@@ -62,35 +63,35 @@ class App
     case person_type
     when '1'
       create_student
-
     when '2'
       create_teacher
     end
+
     puts 'Person created successfully'
-    puts
   end
 
   def create_book
     print 'Title: '
     title = gets.chomp
+
     print 'Author: '
     author = gets.chomp
 
-    @books.push(Book.new(title: title, author: author))
+    @books.push(Book.new(title, author))
+
     puts 'Book created successfully'
-    puts
   end
 
   def create_rental
     puts 'Select a book from the following list by number'
-
-    @books.each_with_index { |book, index| puts "#{index}) Title: '#{book.title}', Author: #{book.author}" }
+    @books.each_with_index { |book, index| puts "#{index}) #{book}" }
     selected_book = gets.chomp.to_i
     book = @books[selected_book]
 
+    puts 'Select a person from the following list by number'
     @persons.each_with_index do |person, index|
       splited_name = person.class.name.split('::').last
-      puts "#{index}) [#{splited_name}] Name: '#{person.name}', ID: #{person.id} , Age: #{person.age}"
+      puts "#{index}) [#{splited_name}] #{person}"
     end
     selected_person = gets.chomp.to_i
     person = @persons[selected_person]
@@ -98,8 +99,7 @@ class App
     print 'Date: '
     date = gets.chomp
 
-    @rentals.push(Rental.new(date: date, person: person, book: book))
+    @rentals.push(Rental.new(date, person, book))
     puts 'Rental created successfully'
-    puts
   end
 end

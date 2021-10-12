@@ -1,54 +1,56 @@
 require_relative 'app'
 
-$library = App.new
-
 def show_options
   options = [
-    '1 - list all books',
+    '1 - List all books',
     '2 - List all people',
     '3 - Create a person',
     '4 - Create a book',
     '5 - Create a rental',
-    '6 - List all rentals for a given person id',
-    '7 - exit'
+    '6 - List all rentals for a given person ID',
+    '7 - Exit'
   ]
   puts
   puts 'Please choose an option by entering a number: '
   puts options
+  puts
   gets.chomp.to_i
 end
 
-def select_option(choice)
+# rubocop:disable Metrics/CyclomaticComplexity
+def select_option(library, choice)
   case choice
   when 1
-    $library.handle_book_list
+    library.handle_book_list
   when 2
-    $library.handle_person_list
+    library.handle_person_list
   when 3
-    $library.create_person
+    library.create_person
   when 4
-    $library.create_book
+    library.create_book
   when 5
-    $library.create_rental
+    library.create_rental
   when 6
-    $library.handle_rentals_list
+    library.handle_rentals_list
   when 7
     puts 'Thank you for using this app!'
   end
 end
+# rubocop:enable Metrics/CyclomaticComplexity
 
 def run
+  library = App.new
   choice = 0
   until choice == 7
     choice = show_options
     choice = show_options while choice < 1 || choice > 7
-    select_option(choice)
+    puts
+    select_option(library, choice)
   end
 end
 
 def main
   puts 'Welcome to School Library App!'
-  puts
   run
 end
 
