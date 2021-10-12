@@ -14,14 +14,12 @@ class App
 
   def handle_book_list
     @books.each { |book| puts "Title: '#{book.title}', Author: #{book.author}" }
-    run
   end
 
   def handle_person_list
     @persons.each do |person|
       puts "[#{person.class.name.split('::').last}] Name: '#{person.name}', ID: #{person.id} , Age: #{person.age}"
     end
-    run
   end
 
   def handle_rentals_list
@@ -32,7 +30,6 @@ class App
     selected_rental.each do |s_rental|
       puts "Date: '#{s_rental.date}', Book: #{s_rental.book.title} , by: #{s_rental.book.author}"
     end
-    run
   end
 
   def create_teacher
@@ -71,7 +68,6 @@ class App
     end
     puts 'Person created successfully'
     puts
-    run
   end
 
   def create_book
@@ -83,7 +79,6 @@ class App
     @books.push(Book.new(title: title, author: author))
     puts 'Book created successfully'
     puts
-    run
   end
 
   def create_rental
@@ -106,6 +101,5 @@ class App
     @rentals.push(Rental.new(date: date, person: person, book: book))
     puts 'Rental created successfully'
     puts
-    run
   end
 end
