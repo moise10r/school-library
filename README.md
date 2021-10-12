@@ -24,6 +24,13 @@ git clone git@github.com:moise10r/school-library.git
 - GitHub: [@githubhandle](https://github.com/moise10r)
 - Twitter: [@twitterhandle](https://twitter.com/MRushanika)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/nganulo-rushanika-mo%C3%AFse-626139197/)
+
+👤 NGANULO RUSHANIKA Moise
+
+- GitHub: [@AkashaRojee](https://github.com/AkashaRojee)
+- Twitter: [@AkashaRojee](https://twitter.com/AkashaRojee)
+- LinkedIn: [Akasha Rojee](https://www.linkedin.com/in/AkashaRojee/)
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
