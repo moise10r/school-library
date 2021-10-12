@@ -1,5 +1,7 @@
 require_relative 'app'
 
+$library = App.new
+
 def show_options
   options = [
     '1 - list all books',
@@ -17,21 +19,19 @@ def show_options
 end
 
 def select_option(choice)
-  library = App.new
-
   case choice
   when 1
-    library.handle_book_list
+    $library.handle_book_list
   when 2
-    library.handle_person_list
+    $library.handle_person_list
   when 3
-    library.create_person
+    $library.create_person
   when 4
-    library.create_book
+    $library.create_book
   when 5
-    library.create_rental
+    $library.create_rental
   when 6
-    library.handle_rentals_list
+    $library.handle_rentals_list
   when 7
     puts 'Thank you for using this app!'
   end
