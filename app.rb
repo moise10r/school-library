@@ -102,4 +102,9 @@ class App
     @rentals.push(Rental.new(date, person, book))
     puts 'Rental created successfully'
   end
+
+  def load_files
+    File.foreach('books.txt') { |book| @books.push(book) } if File.exist?('books.txt')
+    File.foreach('persons.txt') { |person| @persons.push(person) } if File.exist?('persons.txt')
+  end
 end
