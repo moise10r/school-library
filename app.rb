@@ -110,8 +110,8 @@ class App
   end
 
   def save_files
-    File.write("books.txt", @books.join("\n")) if @books.any?
-    File.write("people.txt", @persons.join("\n")) if @persons.any?
-    File.write("rentals.txt", @rentals.join("\n")) if @rentals.any?
-end
+    File.write('books.txt', @books.join("\n")) if @books.any?
+    File.write('people.txt', @persons.join("\n")) if @persons.any?
+    File.write('rentals.txt', @rentals.join("\n")) if @rentals.any?
+  end
 end
