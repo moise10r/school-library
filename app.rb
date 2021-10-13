@@ -106,7 +106,7 @@ class App
   def load_files
     File.foreach('books.txt') { |book| @books.push(book) } if File.exist?('books.txt')
     File.foreach('persons.txt') { |person| @persons.push(person) } if File.exist?('persons.txt')
-    File.foreach('rentals.txt') { |rental| @rental.push(rental) } if File.exist?('rentals.txt')
+    File.foreach('rentals.txt') { |rental| @rentals.push(rental) } if File.exist?('rentals.txt')
   end
 
   def save_files
