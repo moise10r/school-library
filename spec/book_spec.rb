@@ -12,15 +12,15 @@ describe 'new' do
 end
 
 
-describe 'author' do
-  it 'returns the author' do
-    expect(@book.author).to eq 'Moise'
-  end
-end
-
 describe 'title' do
   it 'returns the title' do
     expect(@book.title).to eq 'Game of thrones'
   end
+  end
+end
+
+describe 'author' do
+  it 'returns the author' do
+    expect(@book.author).to eq 'Moise'
   end
 end
