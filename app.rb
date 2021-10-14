@@ -39,7 +39,7 @@ class App
     print 'Specialization: '
     specialization = gets.chomp
 
-    @persons.push(Teacher.new(age, specialization, name))
+    @persons.push(Teacher.new(name: name, age: age, specialization: specialization))
   end
 
   def create_student
@@ -51,8 +51,8 @@ class App
 
     print 'Has parent permission? [Y/N]: '
     parent_permission = gets.chomp != 'n'
-
-    @persons.push(Student.new(age, 'learn to code', name, parent_permission))
+    
+    @persons.push(Student.new(name: name, age: age, parent_permission: parent_permission, classroom: 'learn to code'))
   end
 
   def create_person
@@ -139,7 +139,7 @@ class App
     age = person['age']
     specialization = person['specialization']
 
-    teacher = Teacher.new(age, specialization, name)
+    teacher = Teacher.new(name: name, age: age, specialization: specialization)
     teacher.id = id
     @persons.push(teacher)
   end
@@ -150,7 +150,7 @@ class App
     age = person['age']
     parent_permission = person['parent_permission']
 
-    student = Student.new(age, classroom, name, parent_permission)
+    student = Student.new(name: name, age: age, parent_permission: parent_permission, classroom: 'learn to code')
     student.id = id
     @persons.push(student)
   end
