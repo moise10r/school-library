@@ -12,4 +12,9 @@ describe Classroom do
     end
   end
 
+  describe '#label' do
+    it 'returns the correct label' do
+      expect(@classroom.label).to eq 'Learn to code'
+    end
+  end
 end
