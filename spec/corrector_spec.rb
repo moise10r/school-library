@@ -14,5 +14,5 @@ describe Corrector do
     it 'returns a capitalized name' do
       expect(@corrector.correct_name('author')).to eq 'Author'
     end
-  end 
+  end
 end

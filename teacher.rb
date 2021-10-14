@@ -1,5 +1,4 @@
 require_relative 'person'
-# rubocop:disable Style/OptionalBooleanParameter
 class Teacher < Person
   def initialize(age:, specialization:, name: 'Unknown', parent_permission: true)
     super(name: name, age: age, parent_permission: parent_permission)
@@ -20,4 +19,3 @@ class Teacher < Person
     }.to_json(*args)
   end
 end
-# rubocop:enable Style/OptionalBooleanParameter

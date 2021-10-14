@@ -1,5 +1,4 @@
 require_relative 'corrector'
-# rubocop:disable Style/OptionalBooleanParameter
 class Person
   attr_accessor :name, :age, :id
   attr_reader :rentals, :parent_permission
@@ -35,4 +34,3 @@ class Person
     "ID: #{@id}, Name: #{@name}, Age: #{@age}"
   end
 end
-# rubocop:enable Style/OptionalBooleanParameter

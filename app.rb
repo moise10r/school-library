@@ -51,7 +51,7 @@ class App
 
     print 'Has parent permission? [Y/N]: '
     parent_permission = gets.chomp != 'n'
-    
+
     @persons.push(Student.new(name: name, age: age, parent_permission: parent_permission, classroom: 'learn to code'))
   end
 
@@ -144,7 +144,7 @@ class App
     @persons.push(teacher)
   end
 
-  def load_student(person, classroom)
+  def load_student(person, _classroom)
     id = person['id'].to_i
     name = person['name']
     age = person['age']

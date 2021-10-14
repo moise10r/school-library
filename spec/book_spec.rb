@@ -11,12 +11,11 @@ describe Book do
     end
   end
 
-
   describe '#title' do
     it 'returns the title' do
       expect(@book.title).to eq 'Game of thrones'
     end
-    end
+  end
 
   describe '#author' do
     it 'returns the author' do
