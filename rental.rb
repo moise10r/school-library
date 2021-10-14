@@ -2,7 +2,7 @@ class Rental
   attr_accessor :date
   attr_reader :person, :book
 
-  def initialize(date:, person:, book:)
+  def initialize(date, person, book)
     @date = date
     @person = person
     person.rentals << self
@@ -18,5 +18,9 @@ class Rental
   def person=(person)
     @person = person
     person.add_rental(self)
+  end
+
+  def to_s
+    "Date: '#{@date}', #{@book}"
   end
 end

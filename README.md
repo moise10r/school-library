@@ -1,6 +1,6 @@
-# School Libary
+# School Library
 
-A ruby application to record what books are in the library and who borrows them
+A ruby application to record what books are in the library and who borrows them.
 
 ## Built with
  - Ruby
@@ -24,22 +24,17 @@ git clone git@github.com:moise10r/school-library.git
 - GitHub: [@githubhandle](https://github.com/moise10r)
 - Twitter: [@twitterhandle](https://twitter.com/MRushanika)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/nganulo-rushanika-mo%C3%AFse-626139197/)
+
+👤 Akasha Rojee
+
+- GitHub: [@AkashaRojee](https://github.com/AkashaRojee)
+- Twitter: [@AkashaRojee](https://twitter.com/AkashaRojee)
+- LinkedIn: [Akasha Rojee](https://www.linkedin.com/in/AkashaRojee/)
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
-
 ## Show your support
 
 Give a ⭐️ if you like this project!
-
-## Acknowledgments
-
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
-
-## 📝 License
-
-This project is [MIT](./MIT.md) licensed.
