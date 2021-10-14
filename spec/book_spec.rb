@@ -18,3 +18,9 @@ describe 'author' do
   end
 end
 
+describe 'title' do
+  it 'returns the correct title' do
+    expect(@book.title).to eq 'Game of thrones'
+  end
+  end
+end
