@@ -34,12 +34,14 @@ def select_option(library, choice)
     library.handle_rentals_list
   when 7
     puts 'Thank you for using this app!'
+    library.save_files
   end
 end
 # rubocop:enable Metrics/CyclomaticComplexity
 
 def run
   library = App.new
+  library.load_files
   choice = 0
   until choice == 7
     choice = show_options
