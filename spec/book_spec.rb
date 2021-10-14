@@ -5,9 +5,16 @@ describe Book do
     @book = Book.new('Game of thrones', 'Moise')
   end
 
-describe '#new' do
+describe 'new' do
   it 'returns a Book object' do
     expect(@book).to be_an_instance_of Book
+  end
+end
+
+
+describe 'author' do
+  it 'returns the author' do
+    expect(@book.author).to eq 'Moise'
   end
 end
 
