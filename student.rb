@@ -1,13 +1,14 @@
 require_relative 'person'
-# rubocop:disable Style/OptionalBooleanParameter
 class Student < Person
-  def initialize(age, classroom, name = 'Unknown', parent_permission = true)
-    super(age, name, parent_permission)
+  attr_reader :classroom
+
+  def initialize(age:, classroom:, name: 'Unknown', parent_permission: true)
+    super(name: name, age: age, parent_permission: parent_permission)
     @classroom = classroom
   end
 
   def play_hooky
-    "¯\(ツ)/¯"
+    '¯\\(ツ)/¯'
   end
 
   def classroom=(classroom)
@@ -25,4 +26,3 @@ class Student < Person
     }.to_json(*args)
   end
 end
-# rubocop:enable Style/OptionalBooleanParameter
